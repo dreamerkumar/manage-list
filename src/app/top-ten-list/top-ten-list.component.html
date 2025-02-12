@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="source-list">
+    <h2>Source List</h2>
+    <div class="search-box">
+      <input 
+        type="text" 
+        [(ngModel)]="searchQuery" 
+        placeholder="Search items..."
+      >
+    </div>
+    <div class="list">
+      @for (item of filteredSourceList; track item.id) {
+        <div class="list-item" (click)="addToTopTen(item)">
+          {{ item.name }}
+        </div>
+      } @empty {
+        <div class="empty-message">No items found</div>
+      }
+    </div>
+  </div>
+
+  <div class="top-ten-list">
+    <h2>Top 10 List</h2>
+    @if (topTenList.length === 10) {
+      <div class="full-message">List is full (10/10)</div>
+    }
+    <div class="list">
+      @for (item of topTenList; track item.id) {
+        <div class="list-item">
+          <span>{{ item.name }}</span>
+          <button class="delete-btn" (click)="removeFromTopTen(item)">
+            ✕
+          </button>
+        </div>
+      } @empty {
+        <div class="empty-message">No items selected</div>
+      }
+    </div>
+  </div>
+</div> 

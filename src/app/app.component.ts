@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TopTenListComponent } from './top-ten-list/top-ten-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  standalone: true,
+  imports: [TopTenListComponent],
+  template: '<app-top-ten-list />',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
