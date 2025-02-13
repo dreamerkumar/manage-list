@@ -10,8 +10,11 @@
     </div>
     <div class="list">
       @for (item of filteredSourceList; track item.id) {
-        <div class="list-item" (click)="addToTopTen(item)">
-          {{ item.name }}
+        <div class="list-item">
+          <span>{{ item.name }}</span>
+          <button class="add-btn" (click)="addToTopTen(item)">
+            +
+          </button>
         </div>
       } @empty {
         <div class="empty-message">No items found</div>
