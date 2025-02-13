@@ -5,7 +5,11 @@ import { TopTenListComponent } from './top-ten-list/top-ten-list.component';
   selector: 'app-root',
   standalone: true,
   imports: [TopTenListComponent],
-  template: '<app-top-ten-list />',
+  template: `
+    <div class="mat-app-background">
+      <app-top-ten-list />
+    </div>
+  `,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
