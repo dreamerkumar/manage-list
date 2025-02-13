@@ -1,43 +1,60 @@
 <div class="container">
-  <div class="source-list">
-    <h2>Source List</h2>
-    <div class="search-box">
-      <input 
-        type="text" 
-        [(ngModel)]="searchQuery" 
-        placeholder="Search items..."
-      >
-    </div>
-    <div class="list">
-      @for (item of filteredSourceList; track item.id) {
-        <div class="list-item">
-          <span>{{ item.name }}</span>
-          <button class="add-btn" (click)="addToTopTen(item)">
-            +
-          </button>
-        </div>
-      } @empty {
-        <div class="empty-message">No items found</div>
-      }
-    </div>
-  </div>
+  <mat-card class="list-card">
+    <mat-card-header>
+      <mat-card-title>Source List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="search-box" appearance="outline">
+        <mat-label>Search items</mat-label>
+        <input matInput [(ngModel)]="searchQuery" placeholder="Type to search...">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
 
-  <div class="top-ten-list">
-    <h2>Top 10 List</h2>
-    @if (topTenList.length === 10) {
-      <div class="full-message">List is full (10/10)</div>
-    }
-    <div class="list">
-      @for (item of topTenList; track item.id) {
-        <div class="list-item">
-          <span>{{ item.name }}</span>
-          <button class="delete-btn" (click)="removeFromTopTen(item)">
-            ✕
-          </button>
+      <mat-list>
+        @for (item of filteredSourceList; track item.id) {
+          <mat-list-item>
+            <span matListItemTitle>{{ item.name }}</span>
+            <button mat-icon-button color="primary" matListItemMeta (click)="addToTopTen(item)">
+              <mat-icon>add_circle</mat-icon>
+            </button>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        } @empty {
+          <mat-list-item>
+            <span class="empty-message">No items found</span>
+          </mat-list-item>
+        }
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="list-card">
+    <mat-card-header>
+      <mat-card-title>Top 10 List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      @if (topTenList.length === 10) {
+        <div class="full-message">
+          <mat-icon color="primary">info</mat-icon>
+          List is full (10/10)
         </div>
-      } @empty {
-        <div class="empty-message">No items selected</div>
       }
-    </div>
-  </div>
+
+      <mat-list>
+        @for (item of topTenList; track item.id) {
+          <mat-list-item>
+            <span matListItemTitle>{{ item.name }}</span>
+            <button mat-icon-button color="warn" matListItemMeta (click)="removeFromTopTen(item)">
+              <mat-icon>remove_circle</mat-icon>
+            </button>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        } @empty {
+          <mat-list-item>
+            <span class="empty-message">No items selected</span>
+          </mat-list-item>
+        }
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
 </div> 

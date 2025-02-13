@@ -20,20 +20,8 @@ h2 {
 }
 
 .search-box {
+  width: 100%;
   margin-bottom: 1rem;
-
-  input {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-
-    &:focus {
-      outline: none;
-      border-color: #007bff;
-    }
-  }
 }
 
 .list {
@@ -83,16 +71,26 @@ h2 {
 }
 
 .empty-message {
-  color: #6c757d;
+  color: rgba(0, 0, 0, 0.54);
   text-align: center;
   padding: 1rem;
 }
 
 .full-message {
-  background: #cce5ff;
-  color: #004085;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(0, 0, 0, 0.87);
   padding: 0.5rem;
-  border-radius: 4px;
   margin-bottom: 1rem;
-  text-align: center;
+  
+  mat-icon {
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.list-card {
+  flex: 1;
 } 
