@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
 
-// Import a prebuilt theme
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
+// Change from indigo-pink to purple-green theme
+@import '@angular/material/prebuilt-themes/purple-green.css';
 
 /* You can add global styles to this file, and also import other style files */
 body {
