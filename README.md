@@ -1,5 +1,8 @@
-# ManageList
+# Manage List
 
+An Angular application to manage a list of items. Source list and top 10 list. Ability to add, remove, and search for items.
+
+# Angular CLI Documentation
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
 ## Development server
@@ -57,3 +60,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
